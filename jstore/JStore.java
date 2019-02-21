@@ -7,4 +7,14 @@
  */
 public class JStore
 {
-    
+
+    public JStore()
+    {
+
+    }
+
+    public void main(String[] args)
+    {
+        return ;
+    }
+}
