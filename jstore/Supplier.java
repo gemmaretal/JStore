@@ -1,70 +1,67 @@
 
 /**
- * Write a description of class Supplier here.
+ * Supplier
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Gemma Retal Ananda
+ * @version (29/02/2019)
  */
-public class Supplier
-{
-    protected int id;
-    protected String name;
-    protected String email;
-    protected String phoneNumber;
-    protected String city;
+public class Supplier{
 
-    public Supplier()
-    {
+    private int id;
+    private String name;
+    private String email;
+    private String phoneNumber;
+    private Location location;
 
+    public Supplier(int id, String name, String email, String phoneNumber, Location location){
+        this.id=id;
+        this.name=name;
+        this.email=email;
+        this.phoneNumber=phoneNumber;
+        this.location=location;
+    }
+    
+    public int getId(){
+        return id;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public String getEmail(){
+        return email;
+    }
+    
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
+    
+    public Location getLocation(){
+        return location;
+    }
+    
+    public void setId(int id){
+        this.id=id;
+    }
+    
+    public void setName(String name){
+        this.name=name;
     }
 
-    public int getid()
-    {
-        return 0;
+    public void setEmail(String email){
+        this.email=email;
     }
-    
-    public String getname()
-    {
-        return "";
+
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber=phoneNumber;
     }
-    
-    public String getemail()
-    {
-        return "";
+
+    public void setLocation(Location location){
+        this.location=location;
     }
-    
-    public String getphoneNumber()
-    {
-        return "";
-    }
-    
-    public String getcity()
-    {
-        return "";
-    }
-    
-    public int setid(int id)
-    {
-        return 0;
-    }
-    
-    public String setname(String name)
-    {
-        return "";
-    }
-    
-    public String setemail(String email)
-    {
-        return "";
-    }
-    
-    public String setphoneNumber(String phoneNumber)
-    {
-        return "";
-    }
-    
-    public String setCity(String City)
-    {
-        return "";
+
+    public void printData(){
+        System.out.println(name);
     }
 }

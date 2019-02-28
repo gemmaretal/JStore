@@ -1,70 +1,77 @@
 
 /**
- * Write a description of class Item here.
+ * Item.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Gemma Retal Ananda
+ * @version (29/02/2019)
  */
-public class Item
-{
-    protected int id;
-    protected String name;
-    protected int stock;
-    protected int price;
-    protected String category;
+public class Item{
 
-    public Item()
-    {
+    private int id;
+    private String name;
+    private int stock;
+    private int price;
+    private String category;
+    private Supplier supplier;
 
+    public Item(int id, String name, int stock, int price, String category, Supplier supplier){
+        this.id=id;
+        this.name=name;
+        this.stock=stock;
+        this.price=price;
+        this.category=category;
+        this.supplier=supplier;
+    }
+    
+    public int getId(){
+        return id;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public int getStock(){
+        return stock;
+    }
+    
+    public int getPrice(){
+        return price;
+    }
+    
+    public String getCategory(){
+        return category;
     }
 
-    public int getId()
-    {
-        return 0;
+    public Supplier getSupplier(){
+        return supplier;
     }
     
-    public String getName()
-    {
-        return "";
+    public void setId(int id){
+        this.id=id;
     }
     
-    public int getStock()
-    {
-        return 0;
+    public void setName(String name){
+        this.name=name;
     }
     
-    public int getPrice()
-    {
-        return 0;
+    public void setStock(int stock){
+        this.stock=stock;
     }
-    
-    public String getCategory()
-    {
-        return "";
+
+    public void setPrice(int price){
+        this.price=price;
     }
-    
-    public int setId(int id)
-    {
-        return 0;
+
+    public void setCategory(String category){
+        this.category=category;
     }
-    
-    public String setName(String name)
-    {
-        return "";
+
+    public void setSupplier(Supplier supplier){
+        this.supplier=supplier;
     }
-    
-    public int setStock(int stock)
-    {
-        return 0;
-    }
-    
-    public int setPrice(int price)
-    {
-        return 0;
-    }
-    
-    public String setCategory(String category)
-    {
-        return "";
+
+    public void printData(){
+        System.out.println(name);
     }
 }

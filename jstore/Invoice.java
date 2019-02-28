@@ -1,67 +1,69 @@
 
 /**
- * Write a description of class Invoice here.
+ * Invoice here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Gemma Retal Ananda
+ * @version (29/02/2019)
  */
 public class Invoice
 {
     protected int id;
-    protected int iditem;
+    protected Item item;
     protected String date;
-    protected int totalprice;
+    protected int totalPrice;
 
 
-    public Invoice()
-    {
-
+     public Invoice(int id, Item item, String date, int totalPrice){    
+        this.id=id;
+        this.item=item;
+        this.date=date;
+        this.totalPrice=totalPrice;
     }
 
-    public int getId()
+    public int getid()
     {
-        return 0;
+        return id;
     }
     
-    public int getiditem()
+    public Item getitem()
     {
-        return 0;
+        return item;
     }
     
     public String getdate()
     {
-        return "";
+        return date;
     }
     
     public int gettotalPrice()
     {
-        return 0;
+        return totalPrice;
     }
     
    
-    public int setId(int id)
+    public void setId(int id)
     {
-        return 0;
+        this.id=id;
     }
     
-    public int setidItem(int idItem)
+    public void setidItem(int idItem)
     {
-        return 0;
+        this.item=item;
     }
     
-    public String setdate(String date)
+    public void setdate(String date)
     {
-        return "";
+        this.date=date;
     }
     
-    public int settotalPrice(int totalPrice)
+    public void settotalPrice(int totalPrice)
     {
-        return 0;
+        this.totalPrice=totalPrice;
     }
     
-    public String setCategory(String category)
+    public void printData()
     {
-        return "";
+       System.out.println(totalPrice);
     }
 }
 

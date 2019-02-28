@@ -1,26 +1,31 @@
 
 /**
- * Write a description of class DatabaseItem here.
+ * DatabaseItem here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Gemma Retal Ananda
+ * @version (29/02/2019)
  */
 public class DatabaseItem
 {
-    private String[] listItem;
+    private String listItem[];
+    private Item item;
 
-    public static void addItem()
-    {
-
+    public DatabaseItem(){
     }
     
-    public static void removeItem()
-    {
-
+    public boolean addItem(Item item){
+    	return true;
     }
     
-    public static void getItemDatabase()
-    {
+    public boolean removeItem(Item item){
+    	return true;
+    }
+    
+    public Item getItem(){
+    	return item;
+    }
 
+    public String[] getItemDatabase(){
+    	return listItem;
     }
 }
