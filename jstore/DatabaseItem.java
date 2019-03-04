@@ -12,11 +12,11 @@ public class DatabaseItem
 
     public DatabaseItem(){
     }
-    
+    //untuk menambahkan item ke class Item
     public boolean addItem(Item item){
     	return true;
     }
-    
+    //untuk menghapus item dari class Item
     public boolean removeItem(Item item){
     	return true;
     }
