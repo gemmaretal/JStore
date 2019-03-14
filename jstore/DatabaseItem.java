@@ -3,29 +3,52 @@
  * DatabaseItem here.
  *
  * @author Gemma Retal Ananda
- * @version (29/02/2019)
+ * @version 1.3
  */
-public class DatabaseItem
-{
+public class DatabaseItem{
     private String listItem[];
-    private Item item;
+    public static Item itemDB;
 
+     /**
+     * Constructor for objects of class DatabaseItem
+     */
     public DatabaseItem(){
     }
+     /**
+     * method ini digunakan untuk menambah item kedalam database
+     *
+     * @return boolean true
+     */
     
-    public boolean addItem(Item item){
-    	return true;
+    public static boolean addItem(Item item)
+    {
+        itemDB = item;
+        return true;
     }
+       /**
+     * method ini digunakan untuk menghapus item kedalam database
+     *
+     * @return boolean true
+     */
     
     public boolean removeItem(Item item){
-    	return true;
+     return true;
     }
+     /**
+     * Method yang digunakan untuk mereturn nilai item
+     * 
+     * @return objek item
+     */
     
     public Item getItem(){
-    	return item;
+     return itemDB;
     }
-
+    /**
+     * Method yang digunakan untuk mereturn nilai dari database item
+     * 
+     * @return list item
+     */
     public String[] getItemDatabase(){
-    	return listItem;
+     return listItem;
     }
 }

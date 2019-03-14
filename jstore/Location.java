@@ -3,9 +3,10 @@
  * Location
  *
  * @author Gemma Retal Ananda
- * @version (29/02/2019)
+ * @version 1.3
  */
 public class Location
+
 {
     protected String province;
     protected String city;
@@ -49,7 +50,10 @@ public class Location
     
     public void printData()
     {
-        System.out.println(province);
+       System.out.println("==========LOCATION=======");
+       System.out.println("Provinsi :" + province);
+       System.out.println("Kota :" + city);
+       System.out.println("Deksripsi :" + description);
     }
     
 }
