@@ -14,7 +14,7 @@ public class DatabaseItem{
      */
     public DatabaseItem(){
     }
-<<<<<<< HEAD
+
      /**
      * method ini digunakan untuk menambah item kedalam database
      *
@@ -31,14 +31,11 @@ public class DatabaseItem{
      *
      * @return boolean true
      */
-    
-=======
+   
     //untuk menambahkan item ke class Item
-    public boolean addItem(Item item){
-    	return true;
-    }
+    
     //untuk menghapus item dari class Item
->>>>>>> d04d1dd59a0857bee3e35de1cca2028700616379
+
     public boolean removeItem(Item item){
      return true;
     }
