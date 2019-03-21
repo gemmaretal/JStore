@@ -90,6 +90,6 @@ public class Item{
         System.out.println("Stock :" + stock);
         System.out.println("Category :" + category);
         System.out.println("Status :" + status);
-        System.out.println("Supplier :" + supplier);
+        System.out.println("Supplier :" + supplier.getName());
     }
 }

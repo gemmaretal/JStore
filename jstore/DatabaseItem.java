@@ -45,7 +45,7 @@ public class DatabaseItem{
      * @return objek item
      */
     
-    public Item getItem(){
+    public static Item getItem(){
      return itemDB;
     }
     /**

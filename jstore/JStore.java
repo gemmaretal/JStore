@@ -17,17 +17,19 @@ public class JStore
     {
         Location location1=new Location("Banten","KutaBaru","Rumah");
         Supplier supplier1=new Supplier(1,"gemma","gemmaretal@gmail.com","085891985866",location1);
+        Item elek1=new Item(1,"Kipas",9,23000,ItemCategory.Electronics,ItemStatus.New, supplier1);
         location1.printData();
         supplier1.printData();
         
-        Transaction.orderNewItem(supplier1);
-        Transaction.orderSecondItem(supplier1);
-        Transaction.orderRefurbishedItem(supplier1);
-        Transaction.sellItemPaid(DatabaseItem.itemDB);
-        Transaction.sellItemUnpaid(DatabaseItem.itemDB);
-        Transaction.sellItemInstallment(DatabaseItem.itemDB);
+        DatabaseItem.addItem(elek1);
+        Transaction.orderNewItem(DatabaseItem.getItem());
+        Transaction.orderSecondItem(DatabaseItem.getItem());
+        Transaction.orderRefurbishedItem(DatabaseItem.getItem());
+        Transaction.sellItemPaid(DatabaseItem.getItem());
+        Transaction.sellItemUnpaid(DatabaseItem.getItem());
+        Transaction.sellItemInstallment(DatabaseItem.getItem());
         
     }
+}
     
    
-}

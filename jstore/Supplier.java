@@ -67,6 +67,6 @@ public class Supplier{
         System.out.println("Name :" + name);
         System.out.println("Email :" + email);
         System.out.println("No telpon :" + phoneNumber);
-        System.out.println("Lokasi Supplier :" + location);
+        System.out.println("Lokasi Supplier :" + Location.getCity());
     }
 }

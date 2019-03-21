@@ -5,22 +5,24 @@
  * @author Gemma Retal Ananda
  * @version 1.3
  */
-public class Invoice
+public abstract class Invoice
 {
     private int id;
     private Item item;
     private String date;
-    private int totalPrice;
+    protected int totalPrice;
     private int totalItem;
     private InvoiceStatus status;
+    private InvoiceType type;
 
 
-     public Invoice(int id, Item item, String date, int totalPrice, InvoiceStatus status){    
+     public Invoice(int id, Item item, String date, int totalPrice,int totalItem){    
         this.id=id;
         this.item=item;
         this.date=date;
         this.totalPrice=totalPrice;
         this.status=status;
+        this.totalItem=totalItem;
     }
 
     public int getid()
@@ -48,11 +50,15 @@ public class Invoice
         return totalItem;
     }
     
-    public InvoiceStatus getstatus()
+    public InvoiceStatus getStatus()
     {
         return status;
     }
-   
+    
+    public abstract InvoiceStatus getInvoiceStatus();
+    public abstract InvoiceType getInvoiceType();    
+    
+    
     
     public void setId(int id)
     {
@@ -80,15 +86,7 @@ public class Invoice
         this.status=status;
     }
     
-    public void printData()
-    {
-       System.out.println("==========INVOICE=======");
-       System.out.println("ID :" + id);
-       System.out.println("Date :" + date );
-       System.out.println("Item :" + item );
-       System.out.println("Total Item :" + totalItem );
-       System.out.println("Total harga :" + totalPrice);
-       System.out.println("Status :" + status );
-    }
+    public abstract void printData();
+    
 }
 

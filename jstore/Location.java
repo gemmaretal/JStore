@@ -9,7 +9,7 @@ public class Location
 
 {
     protected String province;
-    protected String city;
+    protected static String city;
     protected String description;
 
     public Location(String province, String description, String city){
@@ -23,7 +23,7 @@ public class Location
         return province;
     }
     
-    public String getCity()
+    public static String getCity()
     {
         return city;
     }
