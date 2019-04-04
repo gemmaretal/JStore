@@ -5,24 +5,18 @@
  * @author (your name here)
  * @version (version number or date here)
  */
-public enum InvoiceStatus {
-
-   Paid {
-        public String toString() {
-            return "Paid";
-        }
+public enum InvoiceStatus
+{
+    Paid("Paid"), Unpaid("Unpaid"), Installment("Installment");
+    private String value;
+    
+    public String toString()
+    {
+        return value;
     }
-    ,
-    Unpaid {
-        public String toString() {
-            return "Unpaid";
-        }
+    
+    InvoiceStatus(String value)
+    {
+        this.value=value;
     }
-    ,
-    Installment {
-        public String toString() {
-            return "Installment";
-        }
-    }
-
 }

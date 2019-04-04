@@ -5,45 +5,48 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+import java.util.*;
 public class Sell_Unpaid extends Invoice
 {
     // instance variables - replace the example below with your own
-    private static InvoiceType INVOICE_TYPE=InvoiceType.Sell;
-    private static InvoiceStatus INVOICE_STATUS=InvoiceStatus.Unpaid;
-    private String dueDate;
-    /**
-     * Constructor for objects of class Sell_Unpaid
-     */
-    public Sell_Unpaid(int id, Item item, String date, int totalPrice, int totalItem, String dueDate)
+    private static InvoiceType INVOICE_TYPE = InvoiceType.Sell;
+    private static InvoiceStatus INVOICE_STATUS = InvoiceStatus.Unpaid;
+    private Calendar dueDate;
+    private Customer customer;
+
+    public Sell_Unpaid(int id, Item item, int totalItem, Customer customer)
     {
-        super(id,item,date,totalPrice,totalItem);
-        this.dueDate=dueDate;
+        super(id, item, totalItem);
+        this.customer = customer;
+        this.dueDate = Calendar.getInstance();
+        this.dueDate.add(Calendar.DATE,+1);
     }
-    
-    public InvoiceStatus getInvoiceStatus()
-    {
+
+    public InvoiceStatus getInvoiceStatus(){
         return INVOICE_STATUS;
     }
     
-    public InvoiceType getInvoiceType()
-    {
+    public InvoiceType getInvoiceType(){
         return INVOICE_TYPE;
     }
     
-    public String getdueDate()
-    {
+    public Calendar getDueDate(){
         return dueDate;
     }
     
-    public void printData()
-    {
-        System.out.println("==========INVOICE=======");
-        System.out.println("ID :" + getid());
-        System.out.println("Date :" + getdate());
-        System.out.println("Item yang terdapat :" + getitem().getName());
-        System.out.println("Total harga :" + gettotalPrice());
-        System.out.println("Status :" + getStatus());
-        
+    public void setCustomer(Customer customer){
+        this.customer=customer;
     }
- 
+    public void setDueDate(Calendar dueDate){
+        this.dueDate=dueDate;
+    }
+      
+    public void setInvoiceStatus(InvoiceStatus status)
+    {
+        this.INVOICE_STATUS=status;
+    }
+    
+    public String toString(){
+        return "";
+    }
 }

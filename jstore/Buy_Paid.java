@@ -10,13 +10,14 @@ public class Buy_Paid extends Invoice
     // instance variables - replace the example below with your own
     private static InvoiceType INVOICE_TYPE=InvoiceType.Buy;
     private static InvoiceStatus INVOICE_STATUS=InvoiceStatus.Paid;
+    private Customer customer;
 
     /**
      * Constructor for objects of class Buy_Paid
      */
-    public Buy_Paid(int id, Item item, String date, int totalPrice, int totalItem)
+    public Buy_Paid(int id, Item item, int totalItem)
     {
-        super(id,item,date,totalPrice,totalItem);
+        super(id,item,totalItem);
     }
     
     public InvoiceStatus getInvoiceStatus()
@@ -29,14 +30,25 @@ public class Buy_Paid extends Invoice
         return INVOICE_TYPE;
     }
     
-    public void printData()
+    public Customer getCustomer()
     {
-        System.out.println("==========INVOICE=======");
-        System.out.println("ID :" + getid());
-        System.out.println("Date :" + getdate());
-        System.out.println("Item yang terdapat :" + getitem().getName());
-        System.out.println("Total harga :" + gettotalPrice());
-        System.out.println("Status :" + getStatus());
+        return customer;
+    }
+    
+    public void setCostumer(Customer customer)
+    {
+        this.customer=customer;
+    }
+    
+    public void setInvoiceStatus(InvoiceStatus status)
+    {
+        this.INVOICE_STATUS=status;
+    }
+    
+    public String toString()
+    {
+        
+        return "";
         
     }
  

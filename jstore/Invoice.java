@@ -3,26 +3,27 @@
  * Invoice here.
  *
  * @author Gemma Retal Ananda
- * @version 1.3
+ * @version 1.5
  */
+
+import java.util.*;
 public abstract class Invoice
 {
     private int id;
     private Item item;
-    private String date;
+    private Calendar  date=Calendar.getInstance();
     protected int totalPrice;
     private int totalItem;
-    private InvoiceStatus status;
-    private InvoiceType type;
+    //private InvoiceStatus status;
+    //private InvoiceType type;
 
 
-     public Invoice(int id, Item item, String date, int totalPrice,int totalItem){    
+     public Invoice(int id, Item item, int totalItem)
+    {
         this.id=id;
         this.item=item;
-        this.date=date;
-        this.totalPrice=totalPrice;
-        this.status=status;
         this.totalItem=totalItem;
+        settotalPrice(totalItem*item.getPrice());
     }
 
     public int getid()
@@ -35,7 +36,7 @@ public abstract class Invoice
         return item;
     }
     
-    public String getdate()
+    public Calendar getdate()
     {
         return date;
     }
@@ -50,12 +51,13 @@ public abstract class Invoice
         return totalItem;
     }
     
-    public InvoiceStatus getStatus()
+    /*public InvoiceStatus getStatus()
     {
         return status;
-    }
+    }*/
     
     public abstract InvoiceStatus getInvoiceStatus();
+    
     public abstract InvoiceType getInvoiceType();    
     
     
@@ -70,7 +72,7 @@ public abstract class Invoice
         this.item=item;
     }
     
-    public void setdate(String date)
+    public void setdate(Calendar date)
     {
         this.date=date;
     }
@@ -80,13 +82,11 @@ public abstract class Invoice
         this.totalPrice=totalPrice;
     }
     
- 
-    public void setStatus(InvoiceStatus status)
-    {
-        this.status=status;
-    }
     
-    public abstract void printData();
+ 
+    public abstract void setInvoiceStatus(InvoiceStatus status);
+    
+    public abstract String toString();
     
 }
 

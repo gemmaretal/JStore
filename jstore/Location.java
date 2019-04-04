@@ -48,12 +48,9 @@ public class Location
         this.description=description;
     }
     
-    public void printData()
-    {
-       System.out.println("==========LOCATION=======");
-       System.out.println("Provinsi :" + province);
-       System.out.println("Kota :" + city);
-       System.out.println("Deksripsi :" + description);
+   
+    public String toString(){
+        return "========LOCATION========\nprovinsi:"+province+"\nkota:"+city+"\ndeskripsi:"+description;
     }
     
 }

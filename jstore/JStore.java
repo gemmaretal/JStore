@@ -1,4 +1,4 @@
-
+ 
 /**
  * Write a description of class JStore here.
  *
@@ -18,8 +18,7 @@ public class JStore
         Location location1=new Location("Banten","KutaBaru","Rumah");
         Supplier supplier1=new Supplier(1,"gemma","gemmaretal@gmail.com","085891985866",location1);
         Item elek1=new Item(1,"Kipas",9,23000,ItemCategory.Electronics,ItemStatus.New, supplier1);
-        location1.printData();
-        supplier1.printData();
+        DatabaseItem.addItem(elek1);
         
         DatabaseItem.addItem(elek1);
         Transaction.orderNewItem(DatabaseItem.getItem());

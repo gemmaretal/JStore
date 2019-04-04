@@ -3,7 +3,7 @@
  * DatabaseItem here.
  *
  * @author Gemma Retal Ananda
- * @version 1.3
+ * @version 1.5
  */
 public class DatabaseItem{
     private String listItem[];
