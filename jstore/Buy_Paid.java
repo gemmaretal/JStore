@@ -5,51 +5,42 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.text.*;
+
 public class Buy_Paid extends Invoice
 {
     // instance variables - replace the example below with your own
-    private static InvoiceType INVOICE_TYPE=InvoiceType.Buy;
-    private static InvoiceStatus INVOICE_STATUS=InvoiceStatus.Paid;
-    private Customer customer;
+    private static final InvoiceType INVOICE_TYPE=InvoiceType.Buy;
+    private static final InvoiceStatus INVOICE_STATUS=InvoiceStatus.Paid;
+    private boolean isActive;
 
     /**
      * Constructor for objects of class Buy_Paid
      */
-    public Buy_Paid(int id, Item item, int totalItem)
+    public Buy_Paid(ArrayList<Integer> item)
     {
-        super(id,item,totalItem);
+        super(item);
+        this.isActive = false;
     }
     
-    public InvoiceStatus getInvoiceStatus()
-    {
+    public InvoiceStatus getInvoiceStatus(){
         return INVOICE_STATUS;
     }
     
-    public InvoiceType getInvoiceType()
-    {
+    public InvoiceType getInvoiceType(){
         return INVOICE_TYPE;
     }
-    
-    public Customer getCustomer()
-    {
-        return customer;
+   
+    public String toString(){
+        SimpleDateFormat sdf = new SimpleDateFormat ("dd MMM yyyy");
+        return "===BuyPaid====\n ID= "+this.getId()+
+        "\nBuy Date: "+sdf.format(this.getDate().getTime())+
+        "\nPrice Total: "+this.getTotalPrice()+
+         "\nStatus: " + InvoiceStatus.Paid +
+        "\nSell Success\n";
     }
-    
-    public void setCostumer(Customer customer)
-    {
-        this.customer=customer;
-    }
-    
-    public void setInvoiceStatus(InvoiceStatus status)
-    {
-        this.INVOICE_STATUS=status;
-    }
-    
-    public String toString()
-    {
-        
-        return "";
-        
-    }
- 
 }

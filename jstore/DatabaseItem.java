@@ -3,57 +3,111 @@
  * DatabaseItem here.
  *
  * @author Gemma Retal Ananda
- * @version 1.5
+ * @version 1.6
  */
-public class DatabaseItem{
-    private String listItem[];
-    public static Item itemDB;
+import java.util.*;
+import java.util.ArrayList;
 
-     /**
-     * Constructor for objects of class DatabaseItem
+public class DatabaseItem{
+    // deklarasi tipe data variabel instance
+    private static ArrayList<Item> ITEM_DATABASE = new ArrayList<Item>();
+    private static int LAST_ITEM_ID = 0;    
+    /**
+     * Constructor untuk objek dari class databaseItem
      */
-    public DatabaseItem(){
+    public DatabaseItem(){}        
+    
+  
+    public static ArrayList<Item> getItemDatabase()
+    {
+        return ITEM_DATABASE;
     }
 
-     /**
-     * method ini digunakan untuk menambah item kedalam database
+    public static int getLastItem(){
+        return LAST_ITEM_ID;
+    }
+
+    /**
+     * Metode untuk menambah item kedalam database item
      *
-     * @return boolean true
+     * @param  item parameter dari objek item yang ada 
+     * @return true berhasil menambah
      */
-    
     public static boolean addItem(Item item)
     {
-        itemDB = item;
+        for (Item temp : ITEM_DATABASE ) {
+            if(((temp.getName() == item.getName()) && (temp.getStatus() == item.getStatus()) &&
+             (temp.getSupplier() == item.getSupplier()))){                
+                return false;
+            }
+        }
+        ITEM_DATABASE.add(item);
         return true;
     }
-       /**
-     * method ini digunakan untuk menghapus item kedalam database
-     *
-     * @return boolean true
-     */
-   
-    //untuk menambahkan item ke class Item
-    
-    //untuk menghapus item dari class Item
 
-    public boolean removeItem(Item item){
-     return true;
+    public static Item getItemFromID(int id){
+        for (Item item : ITEM_DATABASE){
+            if (item.getId() == id ){
+                return item;
+            }
+        }
+        return null;
     }
-     /**
-     * Method yang digunakan untuk mereturn nilai item
-     * 
-     * @return objek item
-     */
-    
-    public static Item getItem(){
-     return itemDB;
+
+    public static ArrayList<Item> getItemFromSupplier(Supplier supplier){
+        ArrayList<Item> bar = new ArrayList<Item>();
+        for (Item item : ITEM_DATABASE){
+            if (item.getSupplier() == supplier ){
+                bar.add(item);
+            }
+        }
+        if (bar != null){
+            return bar;
+        }
+        return null;
     }
+
+    public static ArrayList<Item> getItemFromCategory(ItemCategory category){
+        ArrayList<Item> bar = new ArrayList<Item>();
+        for (Item item : ITEM_DATABASE){
+            if (item.getCategory() == category ){
+                bar.add(item);
+            }
+        }
+        if (bar != null){
+            return bar;
+        }
+        return null;
+    }
+
+    public static ArrayList<Item> getItemFromStatus(ItemStatus status){
+        ArrayList<Item> bar = new ArrayList<Item>();
+        for (Item item : ITEM_DATABASE){
+            if (item.getStatus() == status ){
+                bar.add(item);
+            }
+        }
+        if (bar != null){
+            return bar;
+        }
+        return null;
+    }
+
     /**
-     * Method yang digunakan untuk mereturn nilai dari database item
-     * 
-     * @return list item
+     * Metode untuk membuang item dari database item
+     *
+     * @param  item parameter dari objek item yang ada 
+     * @return true berhasil membuang
      */
-    public String[] getItemDatabase(){
-     return listItem;
+    public static boolean removeItem(int id)
+    {
+        for(Item item : ITEM_DATABASE){
+            if(item.getId() == id){
+                ITEM_DATABASE.remove(item);
+                return true;
+            }
+        }
+        return false;
     }
+
 }

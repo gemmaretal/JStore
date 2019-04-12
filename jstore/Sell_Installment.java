@@ -1,3 +1,6 @@
+import java.util.*;
+import java.text.SimpleDateFormat;
+
 /**
  * Write a description of class Sell_Installment here.
  *
@@ -12,14 +15,24 @@ public class Sell_Installment extends Invoice
     private int installmentPeriod;
     private int installmentPrice;
     private Customer customer;
+    private boolean isActive;
     /**
      * Constructor for objects of class Sell_Installment
      */
-    public Sell_Installment(int id, Item item, int totalItem, int installmentPeriod, Customer customer)
+    public Sell_Installment(ArrayList<Integer> item,int installmentPeriod, Customer customer)
     {
-        super(id, item, totalItem);
+        super(item);        
         this.installmentPeriod = installmentPeriod;
         this.customer = customer;
+        this.isActive = true;
+    }
+    
+    public void setIsActive(boolean isActive){
+        this.isActive = isActive;
+    }   
+    
+    public boolean getIsActive(){
+        return this.isActive;
     }
 
     public int getInstallmentPeriod(){
@@ -42,12 +55,14 @@ public class Sell_Installment extends Invoice
         return INVOICE_TYPE;
     }
     
-    public void setInstallmentPrice(){
-        installmentPrice = (totalPrice / installmentPeriod) * 102 / 100 ;
+    public void setIntallmentPrice(int totalPrice)
+    {
+        installmentPrice=(totalPrice/installmentPeriod)*102/100;
     }
     
-    public void setTotalPrice(){
-        totalPrice = installmentPrice * installmentPeriod;
+    public void setTotalPrice()
+    {
+        setTotalPrice(installmentPrice*installmentPeriod);
     }
     
     public void setCustomer(Customer customer){
@@ -59,7 +74,22 @@ public class Sell_Installment extends Invoice
         this.INVOICE_STATUS=status;
     }
     
-    public String toString(){
-       return ""; 
+    
+    public String toString()
+    {
+       
+        SimpleDateFormat sdf = new SimpleDateFormat ("dd MMM yyyy");
+        for (int bar : this.getItem()){
+            DatabaseItem.getItemFromID(bar).toString();            
+        }
+        
+        return "====Sell Installment=== \nID= "+this.getId()+
+        "\nBuy Date: "+sdf.format(this.getDate().getTime())+
+        "\nPrice Total: "+this.getTotalPrice()+
+        "\nInstallment price: "+this.getInstallmentPrice()+
+        "\nCustomer ID= "+ this.getCustomer().getId() +
+        "\nCustomer Name= "+ this.getCustomer().getName() +
+        "\nStatus: " + InvoiceStatus.Installment +
+        "\nSell Success\n";        
     }
 }

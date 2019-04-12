@@ -3,7 +3,7 @@
  * Supplier
  *
  * @author Gemma Retal Ananda
- * @version 1.3
+ * @version 1.6
  */
 public class Supplier{
 
@@ -13,12 +13,14 @@ public class Supplier{
     private String phoneNumber;
     private Location location;
 
-    public Supplier(int id, String name, String email, String phoneNumber, Location location){
-        this.id=id;
-        this.name=name;
-        this.email=email;
-        this.phoneNumber=phoneNumber;
-        this.location=location;
+    public Supplier(String name, String email, String phoneNumber, Location location)
+    {
+        
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
     }
     
     public int getId(){

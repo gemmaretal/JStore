@@ -1,92 +1,98 @@
-
+import java.util.*;
 /**
  * Invoice here.
  *
  * @author Gemma Retal Ananda
- * @version 1.5
+ * @version 1.6
  */
 
-import java.util.*;
+
 public abstract class Invoice
 {
     private int id;
-    private Item item;
-    private Calendar  date=Calendar.getInstance();
-    protected int totalPrice;
-    private int totalItem;
-    //private InvoiceStatus status;
-    //private InvoiceType type;
+    private ArrayList<Integer> item = new ArrayList<Integer>();
+    private Calendar date;
+    private int totalPrice;
+    private boolean isActive;
+    private Customer customer;
+    private InvoiceStatus status;
+    private InvoiceType type;
 
 
-     public Invoice(int id, Item item, int totalItem)
+    public Invoice(ArrayList<Integer> item)
     {
-        this.id=id;
-        this.item=item;
-        this.totalItem=totalItem;
-        settotalPrice(totalItem*item.getPrice());
+        // initialise instance variables
+        this.id = DatabaseCustomer.getLastCustomerID() + 1;
+        this.item = item;
+        this.date = Calendar.getInstance();  
     }
 
-    public int getid()
+    public int getId()
     {
         return id;
     }
     
-    public Item getitem()
+    public ArrayList<Integer> getItem()
     {
         return item;
     }
     
-    public Calendar getdate()
+    public Calendar getDate()
     {
         return date;
     }
     
-    public int gettotalPrice()
+    public int getTotalPrice()
     {
         return totalPrice;
     }
     
-    public int gettotalItem()
-    {
-        return totalItem;
+    public boolean getIsActive(){
+        return isActive;
     }
     
-    /*public InvoiceStatus getStatus()
-    {
-        return status;
-    }*/
+    public Customer getCustomer(){
+        return customer;
+    }
     
     public abstract InvoiceStatus getInvoiceStatus();
     
-    public abstract InvoiceType getInvoiceType();    
+    public abstract InvoiceType getInvoiceType();
     
-    
-    
-    public void setId(int id)
+    public void setId (int id)
     {
-        this.id=id;
+        this.id = id;
     }
     
-    public void setidItem(int idItem)
+    public void setItem (ArrayList<Integer> item)
     {
-        this.item=item;
+        this.item = item;
     }
     
-    public void setdate(Calendar date)
-    {
-        this.date=date;
+    public void setCustomer (Customer customer){
+        this.customer = customer;
     }
     
-    public void settotalPrice(int totalPrice)
-    {
-        this.totalPrice=totalPrice;
+    public void setIsActive(boolean isActive){
+        this.isActive = isActive; 
     }
     
+    public void setDate (Calendar date)
+    {
+        this.date = date;
+    }
     
- 
-    public abstract void setInvoiceStatus(InvoiceStatus status);
+    public void setTotalPrice (int totalPrice)
+    {
+        for (int temp : item) {
+            this.totalPrice = this.totalPrice + DatabaseItem.getItemFromID(temp).getPrice();            
+        }
+    }
+       
+    //  public abstract void setInvoiceStatus (InvoiceStatus status);
+    public void setInvoiceStatus (InvoiceStatus status){
+        this.status = status;
+    }
     
     public abstract String toString();
-    
 }
-

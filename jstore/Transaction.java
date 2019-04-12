@@ -1,87 +1,93 @@
 
 /**
- * Write a description of class Transaction here.
+ * Transaction class is used to list all of the transaction
  *
  * @author GemmaRetalAnanda
- * @version  1.3
+ * @version  1.6
 * */
+
+import java.util.*;
+import java.text.*;
 public class Transaction
 {
-    
+    // instance variables - replace the example below with your own
     /**
      * Constructor for objects of class Transaction
      */
     public Transaction()
     {
-        
+    }
+    
+    public static void orderNewItem (Item item)
+    {
+        ArrayList<Integer> itemID = new ArrayList<Integer>();
+        itemID.add(item.getId());
+        Invoice invoice=new Buy_Paid(itemID);
+        DatabaseInvoice.addInvoice(invoice);
+    }
+    
+    public static void orderSecondItem (Item item)
+    {
+        ArrayList<Integer> itemID = new ArrayList<Integer>();
+        item.setStatus(ItemStatus.Second);
+        itemID.add(item.getId());
+        Invoice invoice=new Buy_Paid(itemID);
+        DatabaseInvoice.addInvoice(invoice);
+    }
+    
+    public static void orderRefurbishedItem (Item item)
+    {
+        ArrayList<Integer> itemID = new ArrayList<Integer>();
+        item.setStatus(ItemStatus.Refurbished);
+        itemID.add(item.getId());
+        Invoice invoice=new Buy_Paid(itemID);
+        DatabaseInvoice.addInvoice(invoice);
+    }
+    
+    public static void sellItemPaid (Item item, Customer customer)
+    {
+        ArrayList<Integer> itemID = new ArrayList<Integer>();
+        itemID.add(item.getId());
+        Invoice invoice=new Sell_Paid(itemID,customer);
+        DatabaseInvoice.addInvoice(invoice);
+    }
+    
+    public static void sellItemUnpaid (Item item, Customer customer)
+    {
+        ArrayList<Integer> itemID = new ArrayList<Integer>();
+        itemID.add(item.getId());
+        Invoice invoice=new Sell_Unpaid(itemID,customer);
+        DatabaseInvoice.addInvoice(invoice);
+    }
+    
+    public static void sellItemInstallment (Item item, Customer customer, int installmentPeriod)
+    {
+        ArrayList<Integer> itemID = new ArrayList<Integer>();
+        itemID.add(item.getId());
+        Invoice invoice=new Sell_Installment(itemID,installmentPeriod,customer);
+        DatabaseInvoice.addInvoice(invoice);
     }
 
-    public static void orderNewItem(Item item)
-    {
-        Invoice invoice = new Buy_Paid(1, item, "21/03/2019", 100, item.getPrice());
-        if (invoice instanceof Sell_Paid)
-        {
-            System.out.println("Benar Invoice Type adalah Sell_Paid");
-        }else
-        {
-            System.out.println("Salah, Invoice Type adalah Sell_Paid");
+    public static boolean finishTranscation (Invoice invoice){
+        Invoice bon = DatabaseInvoice.getInvoice(invoice.getId());
+        if (bon != null){
+            invoice.setIsActive(false);
+            System.out.println("Invoice isActive: " + invoice.getIsActive());
+            return true;            
         }
-        System.out.println("=====Order New Item=====");
-        invoice.printData();
-        item.printData();
-    }
-    
-    public static void orderSecondItem(Item item)
-    {
-        Invoice invoice = new Buy_Paid(2, item, "21/03/2019", 200, item.getPrice());
-        if (invoice instanceof Sell_Paid)
-        {
-            System.out.println("Benar Invoice Type adalah Sell_Paid");
-        }else
-        {
-            System.out.println("Salah, Invoice Type adalah Sell_Paid");
+        else{
+            return false;
         }
-        System.out.println("=====Order Second Item=====");
-        invoice.printData();
-        item.printData();
     }
-    
-    public static void orderRefurbishedItem(Item item)
-    {
-        Invoice invoice = new Buy_Paid(3, item, "21/03/2019", 300, item.getPrice());
-        if (invoice instanceof Sell_Paid)
-        {
-            System.out.println("Benar Invoice Type adalah Sell_Paid");
-        }else
-        {
-            System.out.println("Salah, Invoice Type adalah Sell_Paid");
+
+    public static boolean cancelTransaction (Invoice invoice){
+        Invoice bon = DatabaseInvoice.getInvoice(invoice.getId());
+        if (bon != null){
+            DatabaseInvoice.removeInvoice(bon.getId());
+            return true;            
         }
-        System.out.println("=====Order Refurbished Item=====");
-        invoice.printData();
-        item.printData();
-    }
-    
-    public static void sellItemPaid(Item item)
-    {
-        Invoice invoice = new Sell_Paid(4,item, "21/03/2019", 400,item.getPrice());
-        System.out.println("=====Sell Item Paid=====");
-        invoice.printData();
-        item.printData();
-    }
-    
-    public static void sellItemUnpaid(Item item)
-    {
-        Invoice invoice = new Sell_Unpaid(5,item,"21/02/2019",500,item.getPrice(),"23/02/2019");
-        System.out.println("=====Sell Item Unpaid=====");
-        invoice.printData();
-        item.printData();
-    }
-    
-    public static void sellItemInstallment(Item item)
-    {
-        Invoice invoice = new Sell_Installment(6,item, "21/02/2019", item.getPrice(),1, 4);
-        System.out.println("=====Sell Item Installment=====");
-        invoice.printData();
-        item.printData();
+        else{
+            return false;
+        }
     }
 }

@@ -15,14 +15,15 @@ public class Item{
     private ItemStatus status;
     private Supplier supplier;
 
-    public Item(int id, String name, int stock, int price, ItemCategory category, ItemStatus status, Supplier supplier){
-        this.id=id;
-        this.name=name;
-        this.stock=stock;
-        this.price=price;
-        this.category=category;
-        this.status=status;
-        this.supplier=supplier;
+    public Item(String name, int stock, ItemStatus status, int price, Supplier supplier, ItemCategory category)
+    {
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
+        this.name = name;
+        this.stock = stock;
+        this.status = status;
+        this.price = price;
+        this.category = category;
+        this.supplier = supplier;
     }
     
     public int getId(){

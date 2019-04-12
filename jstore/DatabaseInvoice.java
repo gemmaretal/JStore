@@ -2,48 +2,77 @@
 /**
  * Write a description of class DatabaseInvoice here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author GemmaRetalAnanda
+ * @version 1.6
  */
+
+import java.util.*;
+import java.util.ArrayList;
 public class DatabaseInvoice
 {
-    // variabel yang digunakan dalam class
-    private Invoice[] listInvoice; // inisialisasi variabel
-    public static Invoice invoice;
+    private Invoice[] listinvoice;
+    private Invoice invoice;
+    //variabel yang dipakai
+    private static ArrayList<Invoice> INVOICE_DATABASE;
+    private static final int LAST_INVOICE_ID =0;
     
-    /**
-     * Method of class DatabaseInvoice
-     * @return true
-     */
-    public static boolean addInvoice(Invoice invoice)
-    {
-        // return dari accessor 
-        return true;
+       
+    public static ArrayList<Invoice> getInvoiceDatabase(){
+        return INVOICE_DATABASE;
     }
 
-    public static boolean removeInvoice(Invoice invoice)
+    public static int getLastInvoiceID(){
+         return LAST_INVOICE_ID;
+    }
+
+    public static boolean addInvoice(Invoice invoice){
+       if (INVOICE_DATABASE.add(invoice)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    } 
+    
+    public static Invoice getInvoice(int id)
     {
-        // return dari accessor 
-        return true;
+        Invoice value=null;
+        for(Invoice invoice : INVOICE_DATABASE)
+        {
+            if(invoice.getId()==id)
+            {
+                value=invoice;
+            }
+        }
+        return value;
+    }
+
+    public static Invoice getActiveOrderCustomer(Customer customer)
+    {
+        Invoice value=null;
+        for(Invoice invoice : INVOICE_DATABASE)
+        {
+            if((invoice.getInvoiceStatus()==InvoiceStatus.Installment||invoice.getInvoiceStatus()==InvoiceStatus.Paid)&&invoice.getIsActive()==true)
+            {
+                value=invoice;
+            }  
+        }
+        return value;
     }
     
-    
-    /**
-     * Method of class DatabaseInvoice
-     * @return supplier
-     */
-    public Invoice getInvoice()
+  
+    public static boolean removeInvoice(int id)
     {
-        // return dari accessor 
-        return invoice;
-    }
-    
-    /**
-     * Method of class DatabaseInvoice
-     * @return listSupplier
-     */
-    public Invoice[] getListInvoice(){
-        // return dari accessor 
-        return listInvoice;
+        boolean value=false;
+        for(Invoice invoice : INVOICE_DATABASE)
+        {
+            if(invoice.getId()==id&&invoice.getIsActive()==true)
+            {
+                invoice.setIsActive(false);
+                INVOICE_DATABASE.remove(id);
+                value=true;
+            }
+        }
+        return value;
     }
 }

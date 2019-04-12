@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=ItemStatus
 comment0.text=\r\n\ Enumeration\ class\ ItemStatus\ \r\n\r\n\ @author\ GemmaRetalAnanda\r\n\ @version\ 1.3\r\n
-comment1.params=
-comment1.target=java.lang.String\ toString()
-comment2.params=value
-comment2.target=ItemStatus(java.lang.String)
+comment1.params=s
+comment1.target=ItemStatus(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
 numComments=3

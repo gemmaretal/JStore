@@ -6,20 +6,23 @@
  * @version (a version number or a date)
  */
 import java.util.*;
+import java.text.*;
 public class Sell_Unpaid extends Invoice
 {
     // instance variables - replace the example below with your own
-    private static InvoiceType INVOICE_TYPE = InvoiceType.Sell;
-    private static InvoiceStatus INVOICE_STATUS = InvoiceStatus.Unpaid;
+    private static final InvoiceType INVOICE_TYPE = InvoiceType.Sell;
+    private static final InvoiceStatus INVOICE_STATUS = InvoiceStatus.Unpaid;
     private Calendar dueDate;
     private Customer customer;
-
-    public Sell_Unpaid(int id, Item item, int totalItem, Customer customer)
+    private boolean isActive;
+    
+    public Sell_Unpaid(ArrayList<Integer> item, Customer customer)
     {
-        super(id, item, totalItem);
+        super(item);
         this.customer = customer;
         this.dueDate = Calendar.getInstance();
         this.dueDate.add(Calendar.DATE,+1);
+        this.isActive = true;
     }
 
     public InvoiceStatus getInvoiceStatus(){
@@ -30,23 +33,34 @@ public class Sell_Unpaid extends Invoice
         return INVOICE_TYPE;
     }
     
+    public Customer getCustomer(){
+        return customer;
+    }
+    
     public Calendar getDueDate(){
         return dueDate;
     }
     
     public void setCustomer(Customer customer){
-        this.customer=customer;
+
     }
     public void setDueDate(Calendar dueDate){
-        this.dueDate=dueDate;
+
     }
-      
-    public void setInvoiceStatus(InvoiceStatus status)
-    {
-        this.INVOICE_STATUS=status;
-    }
-    
+
     public String toString(){
-        return "";
+        SimpleDateFormat sdf = new SimpleDateFormat ("dd MMM yyyy");
+        for (int bar : this.getItem()){
+            DatabaseItem.getItemFromID(bar).toString();            
+        }
+        
+        return "====Sell Unpaid=== \nID= "+this.getId()+
+        "\nBuy Date: "+sdf.format(this.getDate().getTime())+
+        "\nPrice Total: "+this.getTotalPrice()+
+        "\nCustomer ID= "+ this.getCustomer().getId() +
+        "\nCustomer Name= "+ this.getCustomer().getName() +
+        "\nStatus: " + InvoiceStatus.Unpaid +
+        "\nDue date: " + sdf.format(this.getDueDate().getTime())+
+        "\nIf payment is not received by dueDate, transaction will be cancelled\n";        
     }
 }

@@ -7,22 +7,18 @@
  */
 public enum ItemCategory {
 
-    Electronics {
-        public String toString() {
-            return "Electronics";
-        }
+    Electronics("Electronics"),
+    Furniture("Furniture"),
+    Stationery("Stationery");
+    
+    private String ic;
+    
+    ItemCategory(String s){
+        ic = s;
     }
-    ,
-    Furniture {
-        public String toString() {
-            return "Furniture";
-        }
-    }
-    ,
-    Stationery {
-        public String toString() {
-            return "Stationery";
-        }
+    
+    public String toString(){
+        return ic;
     }
 
 }
