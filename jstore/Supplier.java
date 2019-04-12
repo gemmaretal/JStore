@@ -64,6 +64,8 @@ public class Supplier{
     }
 
     public String toString(){
-        return "========SUPPLIER=========\nID: "+id+"nama: "+"\nnama: "+name+"\nemail: "+email+"\nnomor telepon: "+phoneNumber+"\nlokasi: "+location.getCity()+", "+location.getProvince();
+        return "========SUPPLIER=========\nId: "+id+"\nnama: "+name+"\nemail: "+email+"\nnomor telepon: "+phoneNumber+"\nlokasi: "+location.getCity()+", "+location.getProvince();
     }
+    
 }
+
