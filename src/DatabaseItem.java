@@ -32,16 +32,23 @@ public class DatabaseItem
         return LAST_ITEM_ID;
     }
 
-     public static boolean addItem(Item item)
-    {
+    /**
+     * Metode untuk menambah item kedalam database item
+     *
+     * @param  item parameter dari objek item yang ada
+     * @return true berhasil menambah
+     */
+    public static boolean addItem(Item item)
+            throws ItemAlreadyExistsException{
         for (Item temp : ITEM_DATABASE ) {
-            if((temp.getName() == item.getName()) && (temp.getStatus() == item.getStatus()) &&
-             (temp.getSupplier() == item.getSupplier()) && (temp.getCategory()== item.getCategory()) ){
-                return false;
+            if(((temp.getName() == item.getName()) && (temp.getCategory() == item.getCategory()) &&
+                    (temp.getSupplier() == item.getSupplier()))){
+                throw new ItemAlreadyExistsException(item);
+//                    return false;
             }
         }
-        LAST_ITEM_ID = item.getId();
         ITEM_DATABASE.add(item);
+        LAST_ITEM_ID = item.getId();
         return true;
     }
 
@@ -96,18 +103,19 @@ public class DatabaseItem
     /**
      * Metode untuk membuang item dari database item
      *
-     * @param  //item parameter dari objek item yang ada
+     * @param  id parameter dari objek item yang ada
      * @return true berhasil membuang
      */
     public static boolean removeItem(int id)
-    {
+            throws ItemNotFoundException{
         for(Item item : ITEM_DATABASE){
             if(item.getId() == id){
                 ITEM_DATABASE.remove(item);
                 return true;
             }
         }
-        return false;
+        throw new ItemNotFoundException(id);
+//            return false;
     }
 
 }

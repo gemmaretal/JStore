@@ -2,104 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="adcde3d1-caaf-47f1-aa5d-d80da0b8bb8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CustomerDoesntHaveActiveException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InvoiceAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/InvoiceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UML Modul 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/Anggota.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/Anggota.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/Anggota.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/Block.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/Main.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/StatusAnggota.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/StatusAnggota.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/StatusAnggota.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Band/package.bluej" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Buy_Paid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Buy_Paid.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Buy_Paid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Customer.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseCustomer.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseCustomer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseInvoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseInvoice.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseInvoice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseItem.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseSupplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseSupplier.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/DatabaseSupplier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Invoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Invoice.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Invoice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceStatus$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceStatus$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceStatus$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceStatus.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceType.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/InvoiceType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Item.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemCategory$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemCategory$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemCategory$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemCategory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemCategory.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemStatus$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemStatus$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemStatus$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemStatus$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemStatus.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/ItemStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/JStore.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/JStore.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/JStore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Asus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Asus.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Asus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Laptop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Laptop.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Laptop.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Zenbook.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Zenbook.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/Zenbook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/main.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Laptop/package.bluej" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Location.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Location.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Location.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/README.TXT" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Installment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Installment.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Installment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Paid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Paid.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Paid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Unpaid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Unpaid.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Sell_Unpaid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Supplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Supplier.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Supplier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Transaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Transaction.ctxt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/Transaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jstore/package.bluej" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ItemAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemAlreadyExistsException.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -117,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="49" column="43" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="43" />
+            <state relative-caret-position="170">
+              <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2761#2770#0" expanded="true" />
@@ -134,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/src/Supplier.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="311">
-              <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -142,23 +46,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ItemAlreadyExistsException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DatabaseItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
+            <state relative-caret-position="172">
+              <caret line="116" column="40" lean-forward="true" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#554#555#0" expanded="true" />
                 <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#665#666#0" expanded="true" />
+                <element signature="e#628#629#0" expanded="true" />
+                <element signature="e#663#664#0" expanded="true" />
+                <element signature="e#1681#1687#0" expanded="true" />
+                <element signature="e#2046#2052#0" expanded="true" />
+                <element signature="e#2405#2411#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -252,7 +159,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Item.java" />
-        <option value="$PROJECT_DIR$/src/DatabaseItem.java" />
         <option value="$PROJECT_DIR$/src/CustomerDoesntHaveActiveException.java" />
         <option value="$PROJECT_DIR$/src/InvoiceAlreadyExistsException.java" />
         <option value="$PROJECT_DIR$/src/InvoiceNotFoundException.java" />
@@ -261,6 +167,8 @@
         <option value="$PROJECT_DIR$/src/DatabaseInvoice.java" />
         <option value="$PROJECT_DIR$/src/JStore.java" />
         <option value="$PROJECT_DIR$/src/DatabaseSupplier.java" />
+        <option value="$PROJECT_DIR$/src/ItemAlreadyExistsException.java" />
+        <option value="$PROJECT_DIR$/src/DatabaseItem.java" />
       </list>
     </option>
   </component>
@@ -296,6 +204,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -351,7 +260,7 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" weight="0.32970452" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Messages" order="0" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.3289689" />
@@ -482,20 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DatabaseItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="50" column="21" selection-start-line="50" selection-start-column="21" selection-end-line="50" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#665#666#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/InvoiceAlreadyExistsException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -552,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ItemAlreadyExistsException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DatabaseSupplier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -575,17 +463,41 @@
     <entry file="file://$PROJECT_DIR$/src/Supplier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ItemAlreadyExistsException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JStore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="49" column="43" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="43" />
+        <state relative-caret-position="170">
+          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2761#2770#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DatabaseItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="116" column="40" lean-forward="true" selection-start-line="116" selection-start-column="40" selection-end-line="116" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#1681#1687#0" expanded="true" />
+            <element signature="e#2046#2052#0" expanded="true" />
+            <element signature="e#2405#2411#0" expanded="true" />
           </folding>
         </state>
       </provider>

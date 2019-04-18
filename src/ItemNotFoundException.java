@@ -1,9 +1,9 @@
 import java.io.*;
 
 public class ItemNotFoundException extends Exception{
-    private Item item_error;
+    private int item_error;
 
-    public ItemNotFoundException(Item item_input){
+    public ItemNotFoundException(int item_input){
         super();
         item_error = item_input;
     }
