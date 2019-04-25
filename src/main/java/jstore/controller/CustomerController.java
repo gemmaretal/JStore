@@ -9,7 +9,7 @@ import java.util.Calendar;
 public class CustomerController {
 
     @RequestMapping("/")
-    public String indexPage(@RequestParam(value="name", defaultValue="world") String name) {
+    public String indexPage(@RequestParam(value="nam", defaultValue="world") String name) {
         return "Hello " + name;
     }
 
@@ -18,13 +18,12 @@ public class CustomerController {
                             @RequestParam(value="email") String email,
                             @RequestParam(value="username") String username,
                             @RequestParam(value="password") String password,
-                            @RequestParam(value="year", defaultValue = "1999") int year
-    )
-    {
+                            @RequestParam(value="year", defaultValue = "1999") int year) {
         Customer customer = new Customer(name, email, username, password, year, 10, 10);
         try {
             DatabaseCustomer.addCustomer(customer);
-        } catch(Exception ex) {
+        }
+        catch(Exception ex) {
             ex.getMessage();
             return null;
         };
@@ -32,9 +31,17 @@ public class CustomerController {
         return customer;
     }
 
-    @RequestMapping (value = "/logincust/{email}/{password}", method = RequestMethod.POST)
-    public Customer loginCust(@PathVariable String email, String password){
-        Customer cust = DatabaseCustomer.getCustomerLogin(email,password);
-        return cust;
+    @RequestMapping("/getcustomer/{id}")
+    public Customer getCust(@PathVariable int id) {
+        Customer customer = DatabaseCustomer.getCustomer(id);
+        return customer;
     }
+
+    @RequestMapping(value = "/logincust", method = RequestMethod.POST)
+    public Customer loginCust(@RequestParam(value="email") String email,
+                              @RequestParam(value="password") String password){
+        Customer customer = DatabaseCustomer.getCustomerLogin(email , password );
+        return customer;
+    }
+
 }
