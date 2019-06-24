@@ -1,21 +1,17 @@
 package jstore;
-import java.io.*;
 
-public class CustomerAlreadyExistsException extends Exception{
+public class CustomerAlreadyExistsException extends Exception {
     private Customer customer_error;
 
     public CustomerAlreadyExistsException(Customer customer_input){
-        super();
+        super("====Customer Already Exist====\n" +
+                "Customer Email: ");
         customer_error = customer_input;
     }
 
-    @Override
-    public String getMessage(){
-        return "Customer Email: ";
+    public String getExMessage()
+    {
+        return super.getMessage() + customer_error.getEmail() + ", or Username:" +
+                customer_error.getUsername()+ " already exists.\n";
     }
-
-    public String getExMessage(){
-        return super.getMessage() + customer_error.getEmail() + " ,or Username: " + customer_error.getUsername() + " already exists.";
-    }
-
 }

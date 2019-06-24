@@ -1,16 +1,11 @@
 package jstore;
-/**
- * Location
- *
- * @author Gemma Retal Ananda
- * @version 1.3
- */
-public class Location
 
+public class Location
 {
-    protected String province;
-    protected static String city;
-    protected String description;
+
+    private String province;
+    private String description;
+    private String city;
 
     public Location(String province, String description, String city){
         this.province=province;
@@ -18,39 +13,36 @@ public class Location
         this.description=description;
     }
 
-    public String getProvince()
-    {
+    public String getProvince(){
         return province;
     }
-    
-    public static String getCity()
-    {
-        return city;
-    }
-    
-    public String getDescription()
-    {
+
+    public String getDescription(){
         return description;
     }
-    
-    public void setProvince(String province)
-    {
+
+    public String getCity(){
+        return city;
+    }
+
+    public void setProvince(String province){
         this.province=province;
     }
-    
-    public void setCity(String city)
-    {
-        this.city=city;
-    }
-    
-    public void setDescription(String description)
-    {
+
+    public void setDescription(String description){
         this.description=description;
     }
-    
-   
-    public String toString(){
-        return "========LOCATION========\nprovinsi:"+province+"\nkota:"+city+"\ndeskripsi:"+description;
+
+    public void setCity(String city){
+        this.city=city;
     }
-    
+
+    public String toString()
+    {
+        return "= Location ===============================" +
+                "\nProvince      : " + province +
+                "\nCity          : " + city +
+                "\nDescription   : " + description +
+                "\n==========================================";
+    }
 }

@@ -5,19 +5,14 @@ public class InvoiceAlreadyExistsException extends Exception
 
     public InvoiceAlreadyExistsException(Invoice invoice_input)
     {
-        super();
+        super("====Invoice Already Exists====\n" +
+                "Invoice with Item list: ");
         invoice_error = invoice_input;
-    }
-
-    @Override
-    public String getMessage()
-    {
-        return " Invoice with Item list: ";
     }
 
     public String getExMessage()
     {
         return super.getMessage() + invoice_error.getItem()
-                + " already ordered by " + invoice_error.getCustomer().getUsername();
+                + " already ordered by " + invoice_error.getCustomer().getUsername()+"\n";
     }
 }

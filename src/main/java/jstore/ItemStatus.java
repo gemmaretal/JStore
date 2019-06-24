@@ -1,24 +1,17 @@
 package jstore;
-/**
- * Enumeration class ItemStatus 
- *
- * @author GemmaRetalAnanda
- * @version 1.3
- */
+
 public enum ItemStatus
 {
-    New("New"),
-    Second("Second"),
-    Refurbished("Refurbished"),
-    Sold("Sold");
-    
-    private String is;
-    
-    ItemStatus (String s){
-        is = s;
+    New("New"), Second("Second"), Refurbished("Refurbished"), Sold("Sold");
+    private String value;
+       
+    public String toString()
+    {
+        return value;
     }
     
-    public String toString(){
-        return is;
+    private ItemStatus(String value)
+    {
+        this.value=value;
     }
 }

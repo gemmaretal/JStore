@@ -1,57 +1,62 @@
 package jstore;
-/**
- * Write a description of class JStore here.
- *
- * @author GemmaRetalAnanda
- * @version 1.3
- */
-import java.io.*;
+import javax.xml.crypto.Data;
 import java.util.*;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+
 public class JStore
 {
-
     public JStore()
     {
+        
     }
 
     public static void main(String[] args)
     {
+        Location location1 = new Location("Region3","Hoen", "Hoen");
+        Location location2 = new Location("Region2","Johto", "Johto");
+
+
+        try {
+            DatabaseSupplier.addSupplier(new Supplier("Steven Stone","stevenstone@gmail.com", "0800000004", location2));
+        } catch (SupplierAlreadyExistsException e) {
+            e.getExMessage();
+        }
+        try {
+            DatabaseSupplier.addSupplier(new Supplier("May Valentine","mayvalentine@gmail.com", "0800000003", location1));
+        } catch (SupplierAlreadyExistsException e) {
+        }
+
+
+        try {
+            DatabaseItem.addItem(new Item("Poke Ball", 4500000, ItemCategory.Electronics, ItemStatus.New,  DatabaseSupplier.getSupplier(1)));
+        } catch (ItemAlreadyExistsException e) {
+            e.getExMessage();
+        }
+        try {
+            DatabaseItem.addItem(new Item("Nitento Switch", 70000000, ItemCategory.Electronics, ItemStatus.New , DatabaseSupplier.getSupplier(1)));
+        } catch (ItemAlreadyExistsException e) {
+            e.getExMessage();
+        }
+        try {
+            DatabaseItem.addItem(new Item("Great Ball", 8000000, ItemCategory.Electronics, ItemStatus.Second, DatabaseSupplier.getSupplier(1)));
+        } catch (ItemAlreadyExistsException e) {
+            e.getExMessage();
+        }
+        try {
+            DatabaseItem.addItem(new Item("Full Restore", 2540000, ItemCategory.Electronics, ItemStatus.Refurbished, DatabaseSupplier.getSupplier(2)));
+        } catch (ItemAlreadyExistsException e) {
+            e.getExMessage();
+        }
+        try {
+            DatabaseItem.addItem(new Item("Aurora Ticket", 7850000, ItemCategory.Electronics, ItemStatus.New, DatabaseSupplier.getSupplier(2)));
+        } catch (ItemAlreadyExistsException e) {
+            e.getExMessage();
+        }
+
+
         SpringApplication.run(JStore.class, args);
-
-        Location location1=new Location("Banten","KutaBaru","Rumah");
-        try {
-            DatabaseSupplier.addSupplier(new Supplier("gemma1","gemmaretal1@gmail.com","085891985896",location1));
-            DatabaseSupplier.addSupplier(new Supplier("gemma2","gemmaretal2@gmail.com","085891985856",location1));
-            DatabaseSupplier.addSupplier(new Supplier("gemma3","gemmaretal3@gmail.com","085891985876",location1));
-        } catch (SupplierAlreadyExistsException err){
-            System.out.println("==Supplier Already Exists===");
-            System.out.println(err.getExMessage());
-            System.out.println();
-        }
-
-        try {
-            DatabaseItem.addItem(new Item ("Water Jet", 11, ItemStatus.New, 500000, DatabaseSupplier.getSupplier(1), ItemCategory.Electronics));
-            DatabaseItem.addItem(new Item ("Water Jet1", 11, ItemStatus.Second, 500000, DatabaseSupplier.getSupplier(2), ItemCategory.Electronics));
-            DatabaseItem.addItem(new Item ("Water Jet2", 11, ItemStatus.Refurbished, 500000, DatabaseSupplier.getSupplier(3), ItemCategory.Electronics));
-            DatabaseItem.addItem(new Item ("Water Jet3", 11, ItemStatus.Refurbished, 500000, DatabaseSupplier.getSupplier(4), ItemCategory.Furniture));
-
-        } catch (ItemAlreadyExistsException err){
-            System.out.println("===Item Already Exists===");
-            System.out.println(err.getExMessage());
-            System.out.println();
-        }
-
-
-
     }
-
-
-
-
-
 }

@@ -4,16 +4,12 @@ public class InvoiceNotFoundException extends Exception
     private int invoice_error;
 
     public InvoiceNotFoundException(int invoice_input){
-        super();
+        super("====Invoice Not Found====\n" +
+                "Invoice ID: ");
         invoice_error=invoice_input;
     }
 
-    @Override
-    public String getMessage(){
-        return  "Invoice ID : ";
-    }
-
     public String getExMessage(){
-        return super.getMessage() + invoice_error + " not found.";
+        return super.getMessage() + invoice_error + " not found.\n";
     }
 }

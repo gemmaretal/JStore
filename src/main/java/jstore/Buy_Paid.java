@@ -1,32 +1,20 @@
-
-/**
- * Write a description of class Buy_Paid here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 package jstore;
-import jstore.InvoiceType;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
-import java.util.*;
-import java.text.*;
-
+import java.util.ArrayList;
 public class Buy_Paid extends Invoice
 {
-    // instance variables - replace the example below with your own
     private static final InvoiceType INVOICE_TYPE = InvoiceType.Buy;
     private static final InvoiceStatus INVOICE_STATUS = InvoiceStatus.Paid;
     private boolean isActive;
-    /**
-     * Constructor for objects of class Buy_Paid
-     */
+    
     public Buy_Paid(ArrayList<Integer> item)
     {
         super(item);
-        this.isActive = false;
+        setIsActive(false);
+        //this.isActive=false;
     }
     
     public InvoiceStatus getInvoiceStatus(){
@@ -37,18 +25,31 @@ public class Buy_Paid extends Invoice
         return INVOICE_TYPE;
     }
     
-    /*
-    public void setInvoiceStatus (InvoiceStatus status){
-        INVOICE_STATUS = status;
-    }
-    */
-    public String toString(){
-        setTotalPrice(0);
-        SimpleDateFormat sdf = new SimpleDateFormat ("dd MMM yyyy");
-        return "===BuyPaid====\n ID= "+this.getId()+
-        "\nBuy Date: "+sdf.format(this.getDate().getTime())+
-        "\nPrice Total: "+this.getTotalPrice()+
-        "\nStatus: " + InvoiceStatus.Paid +
-        "\nSell Success\n";
+    // public void setInvoiceStatus(InvoiceStatus status)
+    // {
+        
+    // }
+    
+    public String toString()
+    {
+       setTotalPrice(0);
+/*       for (int temp1 : this.getItem())
+       {
+           System.out.println(DatabaseItem.getItemFromID(temp1).toString());
+       }
+*/
+       SimpleDateFormat sdf = new SimpleDateFormat ("dd MMMMM yyyy");
+
+         return "========INVOICE========" +
+                "\nID: " +  getId() +
+       //         "\nItem: " + getItem().getName() +
+       //         "\nAmount: "  + getTotalItem() +
+                "\nBuy date: " + sdf.format(getDate()) +
+       //         "\nPrice: " + getItem().getPrice() +
+                "\nTotal price: " + getTotalPrice() +
+       //         "\nSupplier ID: " + getItem().getSupplier().getId() +
+       //         "\nSupplier name: " + getItem().getSupplier().getName() +
+                "\nStatus: " + InvoiceStatus.Paid +
+                "\nSell Success\n";
     }
 }
